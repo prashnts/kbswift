@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B8F31BA1E1D8AFB003E3840 /* CryptoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F31B91E1D8AFB003E3840 /* CryptoTests.swift */; };
 		2BBE71281E1D694400076EDD /* kbswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BBE711E1E1D694400076EDD /* kbswift.framework */; };
 		2BBE712D1E1D694400076EDD /* kbswiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBE712C1E1D694400076EDD /* kbswiftTests.swift */; };
 		2BBE712F1E1D694400076EDD /* kbswift.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BBE71211E1D694400076EDD /* kbswift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2BE420AC1E1D79E5004DE9C4 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE420AB1E1D79E5004DE9C4 /* Crypto.swift */; };
+		2BE420B01E1D878D004DE9C4 /* libscrypt.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BE420AF1E1D878D004DE9C4 /* libscrypt.0.dylib */; };
 		2FF4B74274CF6E2CE80D456A /* Pods_kbswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F29C1FEA61FDE43CA414F491 /* Pods_kbswift.framework */; };
 		56AF86509B06DD2E6B38AF87 /* Pods_kbswiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0E19250A4BFBF371D5BADC /* Pods_kbswiftTests.framework */; };
 /* End PBXBuildFile section */
@@ -26,12 +29,15 @@
 
 /* Begin PBXFileReference section */
 		0353D913C406A03BFEFA5319 /* Pods-kbswiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kbswiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-kbswiftTests/Pods-kbswiftTests.release.xcconfig"; sourceTree = "<group>"; };
+		2B8F31B91E1D8AFB003E3840 /* CryptoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoTests.swift; sourceTree = "<group>"; };
 		2BBE711E1E1D694400076EDD /* kbswift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = kbswift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BBE71211E1D694400076EDD /* kbswift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kbswift.h; sourceTree = "<group>"; };
 		2BBE71221E1D694400076EDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BBE71271E1D694400076EDD /* kbswiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kbswiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BBE712C1E1D694400076EDD /* kbswiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kbswiftTests.swift; sourceTree = "<group>"; };
 		2BBE712E1E1D694400076EDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BE420AB1E1D79E5004DE9C4 /* Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
+		2BE420AF1E1D878D004DE9C4 /* libscrypt.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libscrypt.0.dylib; path = /usr/local/Cellar/libscrypt/1.21/lib/libscrypt.0.dylib; sourceTree = "<absolute>"; };
 		6632102B10983654F2E13FAB /* Pods-kbswiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kbswiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kbswiftTests/Pods-kbswiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		948BDBD3D5C4210533C9D3A0 /* Pods-kbswift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kbswift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kbswift/Pods-kbswift.debug.xcconfig"; sourceTree = "<group>"; };
 		CE0E19250A4BFBF371D5BADC /* Pods_kbswiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kbswiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BE420B01E1D878D004DE9C4 /* libscrypt.0.dylib in Frameworks */,
 				2FF4B74274CF6E2CE80D456A /* Pods_kbswift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,6 +70,7 @@
 		1B748D3F49EFF161C14CB7BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2BE420AF1E1D878D004DE9C4 /* libscrypt.0.dylib */,
 				F29C1FEA61FDE43CA414F491 /* Pods_kbswift.framework */,
 				CE0E19250A4BFBF371D5BADC /* Pods_kbswiftTests.framework */,
 			);
@@ -93,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				2BBE71211E1D694400076EDD /* kbswift.h */,
+				2BE420AB1E1D79E5004DE9C4 /* Crypto.swift */,
 				2BBE71221E1D694400076EDD /* Info.plist */,
 			);
 			path = kbswift;
@@ -102,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				2BBE712C1E1D694400076EDD /* kbswiftTests.swift */,
+				2B8F31B91E1D8AFB003E3840 /* CryptoTests.swift */,
 				2BBE712E1E1D694400076EDD /* Info.plist */,
 			);
 			path = kbswiftTests;
@@ -185,6 +195,7 @@
 				TargetAttributes = {
 					2BBE711D1E1D694400076EDD = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					2BBE71261E1D694400076EDD = {
@@ -311,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BE420AC1E1D79E5004DE9C4 /* Crypto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B8F31BA1E1D8AFB003E3840 /* CryptoTests.swift in Sources */,
 				2BBE712D1E1D694400076EDD /* kbswiftTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,6 +391,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_INCLUDE_PATHS = "${SRCROOT}/Scrypt";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -421,6 +435,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_INCLUDE_PATHS = "${SRCROOT}/Scrypt";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -431,6 +446,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 948BDBD3D5C4210533C9D3A0 /* Pods-kbswift.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -440,9 +456,14 @@
 				INFOPLIST_FILE = kbswift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/libscrypt/1.21/lib,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = pw.noop.zen.kbswift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -451,6 +472,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CE30B6C89A3C1F0DF09EDDB4 /* Pods-kbswift.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -460,6 +482,10 @@
 				INFOPLIST_FILE = kbswift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/libscrypt/1.21/lib,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = pw.noop.zen.kbswift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -471,6 +497,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6632102B10983654F2E13FAB /* Pods-kbswiftTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = kbswiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
@@ -484,6 +511,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0353D913C406A03BFEFA5319 /* Pods-kbswiftTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = kbswiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
