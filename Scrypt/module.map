@@ -1,0 +1,4 @@
+module Scrypt [system] {
+    header "/usr/local/opt/libscrypt/include/libscrypt.h"
+    export *
+}
