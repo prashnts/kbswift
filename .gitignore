@@ -26,6 +26,8 @@ xcuserdata/
 *.xccheckout
 *.xcscmblueprint
 
+*.playground
+
 # End of https://www.gitignore.io/api/xcode
 Pods/
 
