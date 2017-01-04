@@ -1,0 +1,6 @@
+language: objective-c
+osx_image: xcode8.2
+script:
+  - xcodebuild -workspace kbswift.xcworkspace -scheme kbswift test
+notifications:
+  email: false
