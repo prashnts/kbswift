@@ -6,8 +6,6 @@
 //  Copyright © 2017 Noop. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
-
 //! Project version number for kbswift.
 FOUNDATION_EXPORT double kbswiftVersionNumber;
 
