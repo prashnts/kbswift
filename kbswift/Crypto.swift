@@ -9,17 +9,45 @@
 import Foundation
 import Scrypt
 
-let BUFFER_LEN = 256
+let MODIFIER_BOUND: UInt32 = 2 << 30
+let BUFFER_LEN_MAX: Int = ((2 << 32) - 1) * 32
 
+enum CryptoError: Error {
+    case invalidParam
+}
 
 class Crypto {
-    public static func scrypt(pswd: String, salt: String) -> Int32 {
-        let buffer = UnsafeMutablePointer<UInt8>.allocate(capacity: BUFFER_LEN)
-        
-        let ret = Scrypt.libscrypt_scrypt(pswd, pswd.characters.count, salt, salt.characters.count, 2 << 15, 8, 1, buffer, BUFFER_LEN)
-        
-        if ret == 0 {
+    /// Scrypt is a password-based key derivation function.
+    /// This method wraps scrypt implementation in libscrypt.
+    /// 
+    /// - Parameters
+    ///     - pswd: Password
+    ///     - salt: Salt
+    ///     - N: CPU AND RAM cost (first modifier)
+    ///     - r: RAM Cost
+    ///     - p: CPU cost (parallelisation)
+    ///     - bufflen: Intended length of output buffer.
+    /// - Returns: Key
+    public static func scrypt(pswd: String, salt: String, N: UInt64, r: UInt32, p: UInt32, bufflen: Int) throws -> Array<UInt8>? {
+        let sane = N >> 2 > 0 && r * p < MODIFIER_BOUND && bufflen < BUFFER_LEN_MAX
+
+        if !sane {
+            throw CryptoError.invalidParam
         }
-        return ret
+        
+        let bufferptr = UnsafeMutablePointer<UInt8>.allocate(capacity: bufflen)
+        let exitcode = Scrypt.libscrypt_scrypt(
+            pswd, pswd.characters.count,
+            salt, salt.characters.count,
+            N, r, p, bufferptr, bufflen)
+
+        let key = Array(UnsafeBufferPointer(start: bufferptr, count: bufflen))
+        
+        // Yay for manual memory management!
+        bufferptr.deallocate(capacity: bufflen)
+        if exitcode == -1 {
+            return nil
+        }
+        return key
     }
 }
