@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B1F4C2E1E22BE150050ECC0 /* UInt8+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1F4C2D1E22BE150050ECC0 /* UInt8+Hex.swift */; };
+		2B1F4C301E22BEA10050ECC0 /* Collection+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1F4C2F1E22BEA10050ECC0 /* Collection+Hex.swift */; };
 		2B36473C1E226412003FFDF1 /* libed25519.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B36473B1E226412003FFDF1 /* libed25519.a */; };
 		2B8F31BA1E1D8AFB003E3840 /* CryptoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F31B91E1D8AFB003E3840 /* CryptoTests.swift */; };
+		2BBB90101E22772200BF4719 /* KeybaseStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB900F1E22772200BF4719 /* KeybaseStructs.swift */; };
 		2BBE71281E1D694400076EDD /* kbswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BBE711E1E1D694400076EDD /* kbswift.framework */; };
 		2BBE712D1E1D694400076EDD /* kbswiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBE712C1E1D694400076EDD /* kbswiftTests.swift */; };
 		2BBE712F1E1D694400076EDD /* kbswift.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BBE71211E1D694400076EDD /* kbswift.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -30,8 +33,11 @@
 
 /* Begin PBXFileReference section */
 		0353D913C406A03BFEFA5319 /* Pods-kbswiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kbswiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-kbswiftTests/Pods-kbswiftTests.release.xcconfig"; sourceTree = "<group>"; };
+		2B1F4C2D1E22BE150050ECC0 /* UInt8+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UInt8+Hex.swift"; path = "Extensions/UInt8+Hex.swift"; sourceTree = "<group>"; };
+		2B1F4C2F1E22BEA10050ECC0 /* Collection+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Collection+Hex.swift"; path = "Extensions/Collection+Hex.swift"; sourceTree = "<group>"; };
 		2B36473B1E226412003FFDF1 /* libed25519.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libed25519.a; path = /repository/project/kbswift/../../../usr/local/Cellar/libed25519/0.1.2/lib/libed25519.a; sourceTree = "<absolute>"; };
 		2B8F31B91E1D8AFB003E3840 /* CryptoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoTests.swift; sourceTree = "<group>"; };
+		2BBB900F1E22772200BF4719 /* KeybaseStructs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeybaseStructs.swift; sourceTree = "<group>"; };
 		2BBE711E1E1D694400076EDD /* kbswift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = kbswift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BBE71211E1D694400076EDD /* kbswift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kbswift.h; sourceTree = "<group>"; };
 		2BBE71221E1D694400076EDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,6 +87,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2B1F4C311E22BEE80050ECC0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2B1F4C2D1E22BE150050ECC0 /* UInt8+Hex.swift */,
+				2B1F4C2F1E22BEA10050ECC0 /* Collection+Hex.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		2BBE71141E1D694300076EDD = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +122,8 @@
 				2BBE71211E1D694400076EDD /* kbswift.h */,
 				2BE420AB1E1D79E5004DE9C4 /* Crypto.swift */,
 				2BBE71221E1D694400076EDD /* Info.plist */,
+				2BBB900F1E22772200BF4719 /* KeybaseStructs.swift */,
+				2B1F4C311E22BEE80050ECC0 /* Extensions */,
 			);
 			path = kbswift;
 			sourceTree = "<group>";
@@ -327,6 +344,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BE420AC1E1D79E5004DE9C4 /* Crypto.swift in Sources */,
+				2BBB90101E22772200BF4719 /* KeybaseStructs.swift in Sources */,
+				2B1F4C301E22BEA10050ECC0 /* Collection+Hex.swift in Sources */,
+				2B1F4C2E1E22BE150050ECC0 /* UInt8+Hex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
