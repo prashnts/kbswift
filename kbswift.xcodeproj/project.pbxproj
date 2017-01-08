@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B36473C1E226412003FFDF1 /* libed25519.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B36473B1E226412003FFDF1 /* libed25519.a */; };
 		2B8F31BA1E1D8AFB003E3840 /* CryptoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F31B91E1D8AFB003E3840 /* CryptoTests.swift */; };
 		2BBE71281E1D694400076EDD /* kbswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BBE711E1E1D694400076EDD /* kbswift.framework */; };
 		2BBE712D1E1D694400076EDD /* kbswiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBE712C1E1D694400076EDD /* kbswiftTests.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		0353D913C406A03BFEFA5319 /* Pods-kbswiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kbswiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-kbswiftTests/Pods-kbswiftTests.release.xcconfig"; sourceTree = "<group>"; };
+		2B36473B1E226412003FFDF1 /* libed25519.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libed25519.a; path = /repository/project/kbswift/../../../usr/local/Cellar/libed25519/0.1.2/lib/libed25519.a; sourceTree = "<absolute>"; };
 		2B8F31B91E1D8AFB003E3840 /* CryptoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoTests.swift; sourceTree = "<group>"; };
 		2BBE711E1E1D694400076EDD /* kbswift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = kbswift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BBE71211E1D694400076EDD /* kbswift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kbswift.h; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B36473C1E226412003FFDF1 /* libed25519.a in Frameworks */,
 				2BE420B01E1D878D004DE9C4 /* libscrypt.dylib in Frameworks */,
 				2FF4B74274CF6E2CE80D456A /* Pods_kbswift.framework in Frameworks */,
 			);
@@ -70,6 +73,7 @@
 		1B748D3F49EFF161C14CB7BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2B36473B1E226412003FFDF1 /* libed25519.a */,
 				2BE420AF1E1D878D004DE9C4 /* libscrypt.dylib */,
 				F29C1FEA61FDE43CA414F491 /* Pods_kbswift.framework */,
 				CE0E19250A4BFBF371D5BADC /* Pods_kbswiftTests.framework */,
@@ -391,7 +395,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_INCLUDE_PATHS = "${SRCROOT}/Scrypt";
+				SWIFT_INCLUDE_PATHS = "${SRCROOT}/Scrypt ${SRCROOT}/Ed25519";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -435,7 +439,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
-				SWIFT_INCLUDE_PATHS = "${SRCROOT}/Scrypt";
+				SWIFT_INCLUDE_PATHS = "${SRCROOT}/Scrypt ${SRCROOT}/Ed25519";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -459,6 +463,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/libscrypt/1.21/lib,
+					/usr/local/Cellar/libed25519/0.1.2/lib,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = pw.noop.zen.kbswift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -485,6 +490,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/libscrypt/1.21/lib,
+					/usr/local/Cellar/libed25519/0.1.2/lib,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = pw.noop.zen.kbswift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
