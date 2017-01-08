@@ -8,13 +8,25 @@
 
 import Foundation
 import Scrypt
+import Ed25519
 
 let MODIFIER_BOUND: UInt32 = 2 << 30
 let BUFFER_LEN_MAX: Int = ((2 << 32) - 1) * 32
 
+let SEED_LEN = 32,
+    PUBKEY_LEN = 32,
+    PRIKEY_LEN = 64,
+    SIGNATURE_LEN = 64
+
 enum CryptoError: Error {
     case invalidParam
+    case seedLengthMismatch
 }
+
+typealias CryptoBuffer = Array<UInt8>
+typealias CryptoKeyPair = (public_key: CryptoBuffer, private_key: CryptoBuffer)
+
+typealias _CryptoBufferPtr = UnsafeMutablePointer<UInt8>
 
 class Crypto {
     /// Scrypt is a password-based key derivation function.
