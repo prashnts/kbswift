@@ -40,7 +40,7 @@ class Crypto {
     ///     - p: CPU cost (parallelisation)
     ///     - bufflen: Intended length of output buffer.
     /// - Returns: Key
-    public static func scrypt(pswd: String, salt: String, N: UInt64, r: UInt32, p: UInt32, bufflen: Int) throws -> Array<UInt8>? {
+    public static func scrypt(pswd: String, salt: String, N: UInt64, r: UInt32, p: UInt32, bufflen: Int) throws -> CryptoBuffer? {
         let sane = N >> 2 > 0 && r * p < MODIFIER_BOUND && bufflen < BUFFER_LEN_MAX
 
         if !sane {
@@ -63,3 +63,51 @@ class Crypto {
         return key
     }
 }
+
+
+class EdDSA {
+    public static func createSeed() -> CryptoBuffer {
+        let seed_buffer = _CryptoBufferPtr.allocate(capacity: SEED_LEN)
+
+        let _ = Ed25519.ed25519_create_seed(seed_buffer)
+
+        let seed = Array(UnsafeBufferPointer(start: seed_buffer, count: SEED_LEN))
+        seed_buffer.deallocate(capacity: SEED_LEN)
+        return seed
+    }
+
+    public static func createKeypair(seed: CryptoBuffer) throws -> CryptoKeyPair {
+        if seed.count != SEED_LEN {
+            throw CryptoError.seedLengthMismatch
+        }
+        
+        let pub_buffer  = _CryptoBufferPtr.allocate(capacity: PUBKEY_LEN),
+            priv_buffer = _CryptoBufferPtr.allocate(capacity: PRIKEY_LEN),
+            seed_buffer = _CryptoBufferPtr(mutating: seed)
+
+        Ed25519.ed25519_create_keypair(pub_buffer, priv_buffer, seed_buffer)
+        
+        let pub_key = Array(UnsafeBufferPointer(start: pub_buffer, count: PUBKEY_LEN)),
+            private_key = Array(UnsafeBufferPointer(start: priv_buffer, count: PRIKEY_LEN))
+
+        pub_buffer.deallocate(capacity: PUBKEY_LEN)
+        priv_buffer.deallocate(capacity: PRIKEY_LEN)
+
+        return (pub_key, private_key)
+    }
+
+    public static func sign(message: String, keypair: CryptoKeyPair) -> CryptoBuffer {
+        let sig_buffer = _CryptoBufferPtr.allocate(capacity: SIGNATURE_LEN)
+        Ed25519.ed25519_sign(sig_buffer, message, message.characters.count, keypair.public_key, keypair.private_key)
+        
+        let signature = Array(UnsafeBufferPointer(start: sig_buffer, count: SIGNATURE_LEN))
+        sig_buffer.deallocate(capacity: SIGNATURE_LEN)
+        return signature
+    }
+
+    public static func verify(signature: CryptoBuffer, message: String, public_key: CryptoBuffer) -> Bool {
+        let match = Ed25519.ed25519_verify(signature, message, message.characters.count, public_key)
+        return match == 1
+    }
+}
+
