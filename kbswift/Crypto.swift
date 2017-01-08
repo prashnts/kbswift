@@ -34,7 +34,7 @@ public class Crypto {
      Scrypt is a password-based key derivation function.
      This method wraps scrypt implementation in libscrypt.
      
-     - Parameters
+     - Parameters:
         - pswd: Password
         - salt: Salt
         - N: CPU AND RAM cost (first modifier)
