@@ -1,3 +1,12 @@
-PODFILE CHECKSUM: c60159c6a9f82288173bf00b60bc067ae9485bcc
+PODS:
+  - MessagePack.swift (2.0.0)
+
+DEPENDENCIES:
+  - MessagePack.swift (~> 2.0.0)
+
+SPEC CHECKSUMS:
+  MessagePack.swift: 7ac778bfc455f517624c01e0187cf6ecdea1ea8e
+
+PODFILE CHECKSUM: 470453b5bc2843f5e91cf1bcede7474eb1802fa7
 
 COCOAPODS: 1.1.1
