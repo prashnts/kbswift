@@ -28,11 +28,6 @@ public typealias CryptoKeyPair = (public_key: CryptoBuffer, private_key: CryptoB
 
 typealias _CryptoBufferPtr = UnsafeMutablePointer<UInt8>
 
-extension Array where Element: UInt8 {
-    var base64: String {
-        return Data(self).base64EncodedString()
-    }
-}
 
 public class Crypto {
     /**
@@ -69,6 +64,21 @@ public class Crypto {
             return nil
         }
         return key
+    }
+
+    /**
+     Returns a buffer of random numbers of specified length.
+     The values are streamed from `/dev/urandom`.
+     */
+    public static func nonce(count: Int = 16) -> CryptoBuffer {
+        var array = [Int8](repeating: 0, count: count + 1)
+
+        let devrandom = fopen("/dev/urandom", "r")
+
+        fgets(&array, count + 1, devrandom)
+        fclose(devrandom)
+        array.removeLast()
+        return array.map({ e in UInt8(bitPattern: e) })
     }
 }
 

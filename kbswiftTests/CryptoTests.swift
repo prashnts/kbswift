@@ -35,6 +35,12 @@ class CryptoTests: XCTestCase {
         ]
         XCTAssert(key! == known)
     }
+    
+    func testNonce() {
+        // Only the _behaviour_ is tested.
+        let nonce = Crypto.nonce(count: 32)
+        XCTAssert(nonce.count == 32)
+    }
 }
 
 
