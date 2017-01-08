@@ -3,6 +3,7 @@ osx_image: xcode8.2
 before_install:
   - brew update
   - brew install libscrypt
+  - brew install prashnts/zen/libed25519
 script:
   - xcodebuild -workspace kbswift.xcworkspace -scheme kbswift test
 notifications:
