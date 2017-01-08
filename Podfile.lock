@@ -1,12 +1,15 @@
 PODS:
+  - Just (0.5.7)
   - MessagePack.swift (2.0.0)
 
 DEPENDENCIES:
+  - Just (~> 0.5.7)
   - MessagePack.swift (~> 2.0.0)
 
 SPEC CHECKSUMS:
+  Just: d19e769d86b965e39ae58cb3c0cbad07706634a8
   MessagePack.swift: 7ac778bfc455f517624c01e0187cf6ecdea1ea8e
 
-PODFILE CHECKSUM: 470453b5bc2843f5e91cf1bcede7474eb1802fa7
+PODFILE CHECKSUM: ea7e2651e4c8ef0655940bf9a7f004932b69ea1d
 
 COCOAPODS: 1.1.1
