@@ -1,0 +1,4 @@
+module Ed25519 [system] {
+    header "/usr/local/opt/libed25519/include/ed25519.h"
+    export *
+}
