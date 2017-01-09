@@ -13,7 +13,7 @@ import XCTest
 
 class CryptoTests: XCTestCase {
     /// These tests are taken from https://github.com/Tarsnap/scrypt/blob/master/tests/test_scrypt.good
-    
+
     func testCryptoGoodOne() {
         let key = try! Crypto.scrypt(pswd: "password", salt: "NaCl", N: 1024, r: 8, p: 16, bufflen: 64)
         let known: CryptoBuffer = [
@@ -24,7 +24,7 @@ class CryptoTests: XCTestCase {
         ]
         XCTAssert(key! == known)
     }
-    
+
     func testCryptoGoodTwo() {
         let key = try! Crypto.scrypt(pswd: "pleaseletmein", salt: "SodiumChloride", N: 1048576, r: 8, p: 1, bufflen: 64)
         let known: CryptoBuffer = [
@@ -35,7 +35,7 @@ class CryptoTests: XCTestCase {
         ]
         XCTAssert(key! == known)
     }
-    
+
     func testNonce() {
         // Only the _behaviour_ is tested.
         let nonce = Crypto.nonce(count: 32)

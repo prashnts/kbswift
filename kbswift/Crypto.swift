@@ -33,7 +33,7 @@ public class Crypto {
     /**
      Scrypt is a password-based key derivation function.
      This method wraps scrypt implementation in libscrypt.
-     
+
      - Parameters:
         - pswd: Password
         - salt: Salt
@@ -49,7 +49,7 @@ public class Crypto {
         if !sane {
             throw CryptoError.invalidParam
         }
-        
+
         let bufferptr = UnsafeMutablePointer<UInt8>.allocate(capacity: bufflen)
         let exitcode = Scrypt.libscrypt_scrypt(
             pswd, pswd.characters.count,
@@ -57,7 +57,7 @@ public class Crypto {
             N, r, p, bufferptr, bufflen)
 
         let key = Array(UnsafeBufferPointer(start: bufferptr, count: bufflen))
-        
+
         // Yay for manual memory management!
         bufferptr.deallocate(capacity: bufflen)
         if exitcode == -1 {
@@ -99,7 +99,7 @@ public class EdDSA {
 
     /**
      Returns a new key pair from the given seed.
-     
+
      - Parameters:
         - seed: A 32 Byte CryptoBuffer
      - Returns: A Public and Private KeyPair
@@ -108,13 +108,13 @@ public class EdDSA {
         if seed.count != SEED_LEN {
             throw CryptoError.seedLengthMismatch
         }
-        
+
         let pub_buffer  = _CryptoBufferPtr.allocate(capacity: PUBKEY_LEN),
             priv_buffer = _CryptoBufferPtr.allocate(capacity: PRIKEY_LEN),
             seed_buffer = _CryptoBufferPtr(mutating: seed)
 
         Ed25519.ed25519_create_keypair(pub_buffer, priv_buffer, seed_buffer)
-        
+
         let pub_key = Array(UnsafeBufferPointer(start: pub_buffer, count: PUBKEY_LEN)),
             private_key = Array(UnsafeBufferPointer(start: priv_buffer, count: PRIKEY_LEN))
 
@@ -126,7 +126,7 @@ public class EdDSA {
 
     /**
      Returns a signature of the given message with the given key pair.
-     
+
      - Parameters:
         - message: Message to be signed
         - keypair: A Public, Private KeyPair
@@ -135,7 +135,7 @@ public class EdDSA {
     public static func sign(message: String, keypair: CryptoKeyPair) -> CryptoBuffer {
         let sig_buffer = _CryptoBufferPtr.allocate(capacity: SIGNATURE_LEN)
         Ed25519.ed25519_sign(sig_buffer, message, message.characters.count, keypair.public_key, keypair.private_key)
-        
+
         let signature = Array(UnsafeBufferPointer(start: sig_buffer, count: SIGNATURE_LEN))
         sig_buffer.deallocate(capacity: SIGNATURE_LEN)
         return signature

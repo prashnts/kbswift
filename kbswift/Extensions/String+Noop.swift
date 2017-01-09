@@ -24,7 +24,7 @@ extension String {
     func unhex() -> CryptoBuffer? {
         let convertible = self.lowercased().characters
             .reduce(true) { (prev, c) -> Bool in prev && VALID_HEX.characters.contains(c) }
-        
+
         guard self.characters.count % 2 == 0 && convertible else {
             return nil
         }

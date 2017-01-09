@@ -12,14 +12,14 @@ import XCTest
 @testable import kbswift
 
 class kbswiftTests: XCTestCase {
-    
+
     override func setUp() {
         super.setUp()
     }
-    
+
     override func tearDown() {
         super.tearDown()
     }
-    
+
 }
 

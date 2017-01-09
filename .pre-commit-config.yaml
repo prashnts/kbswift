@@ -2,3 +2,4 @@
   sha: v0.6.1
   hooks:
     - id: trailing-whitespace
+      files: \.(swift|h|m)$
