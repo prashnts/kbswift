@@ -18,6 +18,8 @@
 		2BBE712F1E1D694400076EDD /* kbswift.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BBE71211E1D694400076EDD /* kbswift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BE420AC1E1D79E5004DE9C4 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE420AB1E1D79E5004DE9C4 /* Crypto.swift */; };
 		2BE420B01E1D878D004DE9C4 /* libscrypt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BE420AF1E1D878D004DE9C4 /* libscrypt.dylib */; };
+		2BE68DAE1E23A93600196367 /* String+Noop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE68DAD1E23A93600196367 /* String+Noop.swift */; };
+		2BE68DB01E23AA1300196367 /* ExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE68DAF1E23AA1300196367 /* ExtensionTest.swift */; };
 		2FF4B74274CF6E2CE80D456A /* Pods_kbswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F29C1FEA61FDE43CA414F491 /* Pods_kbswift.framework */; };
 		56AF86509B06DD2E6B38AF87 /* Pods_kbswiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0E19250A4BFBF371D5BADC /* Pods_kbswiftTests.framework */; };
 /* End PBXBuildFile section */
@@ -48,6 +50,8 @@
 		2BBE712E1E1D694400076EDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BE420AB1E1D79E5004DE9C4 /* Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
 		2BE420AF1E1D878D004DE9C4 /* libscrypt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libscrypt.dylib; path = /usr/local/Cellar/libscrypt/1.21/lib/libscrypt.dylib; sourceTree = "<absolute>"; };
+		2BE68DAD1E23A93600196367 /* String+Noop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Noop.swift"; path = "Extensions/String+Noop.swift"; sourceTree = "<group>"; };
+		2BE68DAF1E23AA1300196367 /* ExtensionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionTest.swift; sourceTree = "<group>"; };
 		6632102B10983654F2E13FAB /* Pods-kbswiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kbswiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kbswiftTests/Pods-kbswiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		948BDBD3D5C4210533C9D3A0 /* Pods-kbswift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kbswift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kbswift/Pods-kbswift.debug.xcconfig"; sourceTree = "<group>"; };
 		CE0E19250A4BFBF371D5BADC /* Pods_kbswiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kbswiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +99,7 @@
 				2B1F4C321E22D1FC0050ECC0 /* NSDate+Noop.swift */,
 				2B1F4C2D1E22BE150050ECC0 /* UInt8+Hex.swift */,
 				2B1F4C2F1E22BEA10050ECC0 /* Collection+Hex.swift */,
+				2BE68DAD1E23A93600196367 /* String+Noop.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -136,6 +141,7 @@
 			children = (
 				2BBE712C1E1D694400076EDD /* kbswiftTests.swift */,
 				2B8F31B91E1D8AFB003E3840 /* CryptoTests.swift */,
+				2BE68DAF1E23AA1300196367 /* ExtensionTest.swift */,
 				2BBE712E1E1D694400076EDD /* Info.plist */,
 			);
 			path = kbswiftTests;
@@ -348,6 +354,7 @@
 			files = (
 				2BE420AC1E1D79E5004DE9C4 /* Crypto.swift in Sources */,
 				2BBB90101E22772200BF4719 /* KeybaseStructs.swift in Sources */,
+				2BE68DAE1E23A93600196367 /* String+Noop.swift in Sources */,
 				2B1F4C301E22BEA10050ECC0 /* Collection+Hex.swift in Sources */,
 				2B1F4C2E1E22BE150050ECC0 /* UInt8+Hex.swift in Sources */,
 				2B1F4C331E22D1FC0050ECC0 /* NSDate+Noop.swift in Sources */,
@@ -358,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BE68DB01E23AA1300196367 /* ExtensionTest.swift in Sources */,
 				2B8F31BA1E1D8AFB003E3840 /* CryptoTests.swift in Sources */,
 				2BBE712D1E1D694400076EDD /* kbswiftTests.swift in Sources */,
 			);
